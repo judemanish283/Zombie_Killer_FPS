@@ -11,10 +11,13 @@ public class EnemyAi : MonoBehaviour
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
+    Animator enemyAnimator;
    
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        enemyAnimator = GetComponent<Animator>();
+
     }
 
     
@@ -25,8 +28,14 @@ public class EnemyAi : MonoBehaviour
        {
         EngageTarget();
        }
+       else if(distanceToTarget > chaseRange)
+       {
+            isProvoked = false;
+            enemyAnimator.SetBool("IsMoving", false);
+       }
        else if(distanceToTarget <= chaseRange)
        {
+            enemyAnimator.SetBool("IsMoving", true);
             isProvoked = true;
        }
     }
@@ -35,10 +44,12 @@ public class EnemyAi : MonoBehaviour
     {
         if(distanceToTarget >= navMeshAgent.stoppingDistance)
         {
+            enemyAnimator.SetBool("IsAttacking", false);
             ChaseTarget();
         }
         if(distanceToTarget <= navMeshAgent.stoppingDistance)
         {
+            enemyAnimator.SetBool("IsAttacking", true);
             AttackTarget();
         }
     }
@@ -50,6 +61,7 @@ public class EnemyAi : MonoBehaviour
 
     void AttackTarget()
     {
+        
         Debug.Log("Seeking and destroying");
     }
 
