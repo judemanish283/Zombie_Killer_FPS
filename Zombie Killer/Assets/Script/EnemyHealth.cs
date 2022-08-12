@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     
     public void TakeDamage(int damage)
     {
-        GetComponent<EnemyAi>().IsProvoked();
+        BroadcastMessage("IsProvoked");
         enemyHealth -= damage;
         if(enemyHealth <= 0)
         {
