@@ -7,6 +7,7 @@ public class EnemyAi : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] float chaseRange = 5f;
+    [SerializeField] float turnSpeed = 5f;
     
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity;
@@ -31,38 +32,48 @@ public class EnemyAi : MonoBehaviour
        else if(distanceToTarget > chaseRange)
        {
             isProvoked = false;
-            enemyAnimator.SetBool("IsMoving", false);
+            enemyAnimator.SetTrigger("Idle");
        }
        else if(distanceToTarget <= chaseRange)
        {
-            enemyAnimator.SetBool("IsMoving", true);
-            isProvoked = true;
+            isProvoked = true;   
        }
     }
 
     void EngageTarget()
     {
+        FaceTarget();
         if(distanceToTarget >= navMeshAgent.stoppingDistance)
-        {
-            enemyAnimator.SetBool("IsAttacking", false);
+        { 
             ChaseTarget();
         }
         if(distanceToTarget <= navMeshAgent.stoppingDistance)
         {
-            enemyAnimator.SetBool("IsAttacking", true);
+            
             AttackTarget();
         }
     }
 
     void ChaseTarget()
     {
+        enemyAnimator.SetBool("IsAttacking", false);
+        enemyAnimator.SetBool("IsMoving", true);
         navMeshAgent.SetDestination(target.position);
     }
 
     void AttackTarget()
     {
         
-        Debug.Log("Seeking and destroying");
+        enemyAnimator.SetBool("IsMoving", false);
+        enemyAnimator.SetBool("IsAttacking", true);
+        
+    }
+
+    void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
     }
 
     void OnDrawGizmosSelected() 
@@ -70,6 +81,12 @@ public class EnemyAi : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);    
     }
+
+    public void IsProvoked()
+    {
+        isProvoked = true;
+    }
+    
 
     
 }
