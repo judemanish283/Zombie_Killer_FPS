@@ -255,8 +255,9 @@ GameObject:
   - component: {fileID: 2337074158996965286}
   - component: {fileID: 2337074159000356742}
   - component: {fileID: 2337074158999389510}
+  - component: {fileID: 2112991389}
   m_Layer: 0
-  m_Name: Carbine
+  m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +272,7 @@ Transform:
   m_GameObject: {fileID: 2337074158997199750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 2, z: 4}
   m_Children:
   - {fileID: 2337074158996965284}
   - {fileID: 2337074158996965280}
@@ -333,6 +334,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2112991389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2337074158997199750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ffe8af899d732843a26eb641fe8fbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FPCamera: {fileID: 0}
+  range: 100
+  bulletDamage: 10
+  muzzleflash: {fileID: 8463237921141358747}
+  hitEffect: {fileID: 4294754265171903706}
+  ammoslot: {fileID: 0}
 --- !u!1 &2337074158997199752
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +633,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2337074158996965286}
     m_Modifications:
+    - target: {fileID: 3723510784917535794, guid: 91cd6f4ab6dc98b4f8aa661872ad71ba, type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723510784917535794, guid: 91cd6f4ab6dc98b4f8aa661872ad71ba, type: 3}
+      propertyPath: m_Color.b
+      value: 0.73702383
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723510784917535794, guid: 91cd6f4ab6dc98b4f8aa661872ad71ba, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8842616
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723510784917535794, guid: 91cd6f4ab6dc98b4f8aa661872ad71ba, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723510784917535794, guid: 91cd6f4ab6dc98b4f8aa661872ad71ba, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3723510784928165176, guid: 91cd6f4ab6dc98b4f8aa661872ad71ba, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -664,6 +703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91cd6f4ab6dc98b4f8aa661872ad71ba, type: 3}
+--- !u!1 &4294754265171903706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3723510784928330008, guid: 91cd6f4ab6dc98b4f8aa661872ad71ba, type: 3}
+  m_PrefabInstance: {fileID: 591829087259424194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4294754265172138234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3723510784928165176, guid: 91cd6f4ab6dc98b4f8aa661872ad71ba, type: 3}
@@ -730,7 +774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5202232204315222009, guid: 0b4a0f07f83127947b3126296ab6bd0d, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5202232204315222009, guid: 0b4a0f07f83127947b3126296ab6bd0d, type: 3}
       propertyPath: ShapeModule.m_Rotation.x
@@ -739,6 +783,10 @@ PrefabInstance:
     - target: {fileID: 5202232204315222009, guid: 0b4a0f07f83127947b3126296ab6bd0d, type: 3}
       propertyPath: ShapeModule.m_Rotation.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202232204315222009, guid: 0b4a0f07f83127947b3126296ab6bd0d, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 121.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b4a0f07f83127947b3126296ab6bd0d, type: 3}
@@ -811,5 +859,10 @@ PrefabInstance:
 --- !u!4 &7576981715779119060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+  m_PrefabInstance: {fileID: 5141723967412965831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8463237921141358747 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
   m_PrefabInstance: {fileID: 5141723967412965831}
   m_PrefabAsset: {fileID: 0}

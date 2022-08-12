@@ -11,6 +11,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleflash;
     //[SerializeField] ParticleSystem projectile;
     [SerializeField] GameObject hitEffect;
+    [SerializeField] Ammo ammoslot;
+    [SerializeField] float fireRate = 3;
+    
+    bool canShoot = true;
 
     void Start() 
     {
@@ -19,17 +23,24 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetButtonDown("Fire1"))   
+        if(Input.GetMouseButtonDown(0)&& canShoot)   
         {
-            Shoot();
+            StartCoroutine(Shoot());
         }
         
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
-        PlayMuzzleFlash();
-        ProcessRayCast();
+        canShoot = false;
+        if((ammoslot.GetCurrentAmmo() > 0) )       
+        {
+            PlayMuzzleFlash();
+            ProcessRayCast();
+            
+        }
+        yield return new WaitForSeconds(fireRate);
+        canShoot = true;
     }
 
     void PlayMuzzleFlash()
@@ -42,6 +53,7 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
+            ammoslot.ReduceCurrentAmmo();
             CreateHitImpact(hit);
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) { return; }
