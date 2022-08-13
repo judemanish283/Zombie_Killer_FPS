@@ -16,10 +16,11 @@ public class Weapon : MonoBehaviour
     
     bool canShoot = true;
 
-    void Start() 
+    void OnEnable() 
     {
-      
-    }
+        canShoot = true;
+    } 
+    
     void Update()
     {
         

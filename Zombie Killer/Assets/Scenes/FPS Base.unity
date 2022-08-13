@@ -2580,10 +2580,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.22
-  m_fontSizeBase: 29.22
+  m_fontSize: 27.9
+  m_fontSizeBase: 23.89
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2647,7 +2647,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 88.3602, y: 43.563293}
+  m_SizeDelta: {x: 66.0722, y: 31.181}
   m_Pivot: {x: 1, y: 0}
 --- !u!1001 &2006382444
 PrefabInstance:
@@ -2839,10 +2839,26 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 882270157}
+    - target: {fileID: 4230744115869410399, guid: 290864d3acd52aa48ac33cc5220b2337, type: 3}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170343591494943252, guid: 290864d3acd52aa48ac33cc5220b2337, type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6317030226385217732, guid: 290864d3acd52aa48ac33cc5220b2337, type: 3}
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1975387610}
+    - target: {fileID: 6605393405483197816, guid: 290864d3acd52aa48ac33cc5220b2337, type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378376330106096652, guid: 290864d3acd52aa48ac33cc5220b2337, type: 3}
+      propertyPath: currentWeaponIndex
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290864d3acd52aa48ac33cc5220b2337, type: 3}
 --- !u!1001 &2485523740231151762
