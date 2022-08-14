@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6317030226385217732}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,8 +174,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28ef98dc422cbe46b3a153094ee49be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 100
-  ammoText: {fileID: 0}
+  ammoSlots:
+  - ammoType: 0
+    ammo: 50
+  - ammoType: 1
+    ammo: 20
+  - ammoType: 2
+    ammo: 10
 --- !u!1 &856826340441317270
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bec17b097e31b44eaaed5137955af61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeapon: 0
 --- !u!1001 &3631858293955572251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,20 +421,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158996965286, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337074158996965286, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.228
+      value: -0.163
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158996965286, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.013
+      value: 0.046
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158996965286, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.088
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158996965286, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
       propertyPath: m_LocalRotation.w
@@ -466,6 +468,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4294754265172138234, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294754265172138234, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
 --- !u!1 &1299296672412789149 stripped
@@ -492,9 +502,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 856826340440858034}
   normalFOV: 60
-  scopedFOV: 25
+  scopedFOV: 30
   zoomedInSensitivity: 1
   fpscontroller: {fileID: 856826340448381558}
+  zoomedInToggle: 0
 --- !u!1001 &4230744116843631810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -511,12 +522,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 856826340440858034}
     - target: {fileID: 2112991389, guid: 514d2c22ca9a3d64d99bb7c8c29148e0, type: 3}
+      propertyPath: ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112991389, guid: 514d2c22ca9a3d64d99bb7c8c29148e0, type: 3}
       propertyPath: ammoslot
       value: 
       objectReference: {fileID: 6317030226385217732}
     - target: {fileID: 2112991389, guid: 514d2c22ca9a3d64d99bb7c8c29148e0, type: 3}
       propertyPath: fireRate
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2112991389, guid: 514d2c22ca9a3d64d99bb7c8c29148e0, type: 3}
       propertyPath: bulletDamage
@@ -603,6 +618,7 @@ MonoBehaviour:
   scopedFOV: 25
   zoomedInSensitivity: 1
   fpscontroller: {fileID: 856826340448381558}
+  zoomedInToggle: 0
 --- !u!1001 &6170343589543654025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -711,6 +727,7 @@ MonoBehaviour:
   scopedFOV: 25
   zoomedInSensitivity: 1
   fpscontroller: {fileID: 856826340448381558}
+  zoomedInToggle: 0
 --- !u!1001 &6605393406069380581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -727,12 +744,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 856826340440858034}
     - target: {fileID: 2112991389, guid: 04f3f497c04d8b5408f696c457d138ed, type: 3}
+      propertyPath: ammoType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112991389, guid: 04f3f497c04d8b5408f696c457d138ed, type: 3}
       propertyPath: ammoslot
       value: 
       objectReference: {fileID: 6317030226385217732}
     - target: {fileID: 2112991389, guid: 04f3f497c04d8b5408f696c457d138ed, type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112991389, guid: 04f3f497c04d8b5408f696c457d138ed, type: 3}
       propertyPath: bulletDamage
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158996965286, guid: 04f3f497c04d8b5408f696c457d138ed, type: 3}
       propertyPath: m_RootOrder
@@ -827,3 +852,4 @@ MonoBehaviour:
   scopedFOV: 25
   zoomedInSensitivity: 1
   fpscontroller: {fileID: 856826340448381558}
+  zoomedInToggle: 0
