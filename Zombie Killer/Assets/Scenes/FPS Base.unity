@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 670fe3643eecd1540b6fe6be4e87a27a, type: 2}
+--- !u!1 &50039121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2223064221786540827, guid: 290864d3acd52aa48ac33cc5220b2337, type: 3}
+  m_PrefabInstance: {fileID: 856826339165914732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &101235274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2887,6 +2892,14 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 882270157}
+    - target: {fileID: 2888359341451267485, guid: 290864d3acd52aa48ac33cc5220b2337, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631858293996421766, guid: 290864d3acd52aa48ac33cc5220b2337, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 50039121}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290864d3acd52aa48ac33cc5220b2337, type: 3}
 --- !u!1001 &2485523740231151762

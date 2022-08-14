@@ -416,6 +416,10 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2112991389, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 2888359341451497917}
     - target: {fileID: 2337074158996965286, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -466,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158997199750, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4294754265172138234, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
       propertyPath: m_LocalPosition.x
@@ -478,14 +482,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
---- !u!1 &1299296672412789149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2337074158997199750, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
-  m_PrefabInstance: {fileID: 3631858293955572251}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1299296672412956093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2337074158996965286, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
+  m_PrefabInstance: {fileID: 3631858293955572251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2888359341451497917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1905990645045191590, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
+  m_PrefabInstance: {fileID: 3631858293955572251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1299296672412789149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2337074158997199750, guid: 28bb03a105c57f541abe6eef71b57f87, type: 3}
   m_PrefabInstance: {fileID: 3631858293955572251}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &3352192638337477996
@@ -692,7 +701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158997199750, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158999389510, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: m_Materials.Array.data[0]
