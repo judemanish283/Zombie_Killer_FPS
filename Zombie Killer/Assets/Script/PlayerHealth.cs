@@ -13,9 +13,7 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         if(health <= 0)
         {
-            Debug.Log("You dead boyo!!!");
-            GetComponent<DeathHandler>().HandleDeath();
-            
+            GetComponent<DeathHandler>().HandleDeath();  
         }
     }
 }

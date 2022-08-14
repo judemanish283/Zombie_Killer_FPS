@@ -30,7 +30,7 @@ public class EnemyAi : MonoBehaviour
             navMeshAgent.enabled = false;
         }
        distanceToTarget = Vector3.Distance(target.position, transform.position);
-       if(isProvoked)
+       if(isProvoked && !health.IsDead())
        {
         EngageTarget();
        }
@@ -69,7 +69,7 @@ public class EnemyAi : MonoBehaviour
     void AttackTarget()
     {
         
-        GetComponent<Animator>().SetBool("IsMoving", false);
+       GetComponent<Animator>().SetBool("IsMoving", false);
        GetComponent<Animator>().SetBool("IsAttacking", true);
         
     }
