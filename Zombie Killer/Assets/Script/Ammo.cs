@@ -7,30 +7,32 @@ public class Ammo : MonoBehaviour
 {
     [SerializeField] AmmoSlot[] ammoSlots;
 
-    //[SerializeField] TextMeshProUGUI ammoText;
+    
     
     [System.Serializable]
     private class AmmoSlot
     {
         public AmmoType ammoType;
         public int ammo;
+       
     }
 
     void Start() 
     {
-        //ammoText.text = ammoAmount.ToString();
+         
     }
 
     void Update() 
     {
-        // ammoText.text = ammoAmount.ToString();
-        
+                
     }
 
     public int GetCurrentAmmo(AmmoType ammoType)
     {
         return GetAmmoSlot(ammoType).ammo;
     }
+
+    
 
     public void ReduceCurrentAmmo(AmmoType ammoType)
     { 
